@@ -1,8 +1,8 @@
+
 /*
   Once you complete a problem, refresh ./for-in-delete.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
 */
 
@@ -39,10 +39,14 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  //Code Here
-}
 
+function showValues( obj ) {
+  let string = ''
+  for(let key in obj) {
+    string = string + obj[key]
+  }
+  return string
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -54,7 +58,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function greatherThan10() {
+  for(let key in obj) {
+    if(obj[key] > 10) {
+      obj[key] = 0
+    }
+  }
+  return obj
+}
+greatherThan10()
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +78,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+function double(object ) {
+  for(let key in obj) {
+    object[key] = object[key] * 2 
+  }
+  return object
+}
 
+double()
 
 
 ////////// PROBLEM 4 //////////
@@ -80,7 +99,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function secrets(obj) {
+  let emptyString = ''
+  for(let key in obj) {
+    if(key[0] === 's' && key[1] === 'h') {
+      emptyString = emptyString + obj[key]
+    }
+  }
+  return emptyString
+}
 
 
 /* 
@@ -89,17 +116,17 @@ function showValues( obj ) {
   Uncomment the example below to see a for in loop deleting all the properties inside an object.
 */
 
-// var deleteAllThethings = {
-//   one: 1,
-//   two: 2,
-//   three: 3
-// }
+var deleteAllThethings = {
+  one: 1,
+  two: 2,
+  three: 3
+}
 
-// for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
-// }
+for(var key in deleteAllThethings) {
+  delete deleteAllThethings[key]
+}
 
-// console.log(deleteAllThethings)
+console.log(deleteAllThethings)
 
 
 
@@ -111,6 +138,10 @@ function showValues( obj ) {
 */
 
 //Code Here
+function removePassword(obj) {
+  delete obj.password
+  return obj
+}
 
 
 
@@ -131,6 +162,16 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
+function deleteTheBigNumbers(obj) {
+  for(let key in obj) {
+    if(obj[key] > 100) {
+     delete obj[key]
+   }
+ }
+ return obj
+}
+
+
 
 
 ////////// PROBLEM 7 //////////
@@ -143,8 +184,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
-
+function startsWithK(obj) {
+  for(let key in obj) {
+    if(key[0] === 'k') {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -159,4 +206,15 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
+function hiddenTreasure(obj) {
+  for(let key in obj) {
+    if(obj[key].includes('treasure')) {
+    
+    } else {
+      delete obj[key]
+    }
+  }
+  return obj 
+}
 
+hiddenTreassure(obj)
